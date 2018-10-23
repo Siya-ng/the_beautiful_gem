@@ -209,7 +209,34 @@ puts "He said, \"Welcome\""
   return a new string in reverse order.
   "stressed".reverse #=> "desserts"
 
+* slice(index) -> newString or nil
+  slice(start, length) -> newString or nil
+  ```
+  message = "hello world"
+  message.slice(2) #=> "l"
+  message.slice(2, 8) #=> "llo worl"
+  message.slice(-4..-2) #=> "orl"
+  ```
+* split(pattern=nil, [limit]) -> array
+```
+"hello".split #=> ["hello"]
+"hello world".split #=> ["hello", "world"]
+"hello world".split(" ") #=> ["hello", "world"]
+"hello".split(//) #=> ["h", "e", "l", "l", "o"]
+```
+
+* convert 
+ to_f, convert to float
+ to_i, convert to integer
+```
+ "123.45el".to_f #=> 1234.5
+ "45.67 degrees".to_f #=> 45.67
+ "12345".to_i #=> 12345
+ "99 red balloons".to_i #=> 99
+```
 ##### Arrays
+ordered or integer-indexed collection
+creation: [] or Array.new
 ```
 arr = [1,2,3]
 #=> [1,2,3]
@@ -217,8 +244,60 @@ arr1 = Array.new([4,5,6])
 #=> [4,5,6]
 arr2 = Array.new(3, true)
 #=> [true, true, true]
+empty_table = Array.new(3) { Array.new(3)}
+#=> [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]]
 ```
 
+* Access using index or using at
+```
+arr = [1, 2, 3, 4, 5, 6]
+arr[2] #=> 3
+arr[100] #=> nil
+arr[-3] #=> 4
+arr[2, 3], arr[2..4] #=> [3, 4, 5]
+
+arr.at(0) #=> 1
+arr.first #=> 1
+arr.last #=> 6
+```
+take the first n element, drop -> opposite of take
+arr.take(3) #=> [1, 2, 3]
+arr.drop(3) #=> [4, 5, 6]
+
+* check 
+size, length, count 
+to get the array length
+arr.length or arr.count or arr.size
+empty?
+arr.empty? => false
+
+* adding
+push or << 
+```
+arr.push(7) #=> [1, 2, 3, 4, 5, 6, 7]
+arr << 8 #=> [1, 2, 3, 4, 5, 6, 7, 8]
+```
+unshift add new item at the beginning of an array
+insert: add new element at any position, able to insert mutiple values at once
+
+* removing 
+pop -> remove last element and return it
+shift -> remove first element and return it
+delete_at -> remove element at a particular index
+delete -> remove a particular(all) element anywhere in an array
+
+compact -> to remove nil from an array and return a new array
+compact! -> modify the original 
+uniq -> return a new array with unique element from the array
+
+* Iterating
+
+each
+reverse_each -> iterator in reverse order
+```
+fruits = ["apple", "pear", "watermelon", "orange", "melon", "strawberry"]
+fruits.each { |fruit| puts "i wan to eat #{fruit}"}
+```
 ##### Ranges
 ```
 example_range = (1..10) # includes 10
@@ -228,7 +307,7 @@ letters_range = ('a'..'z')
 
 #### Hashes
 With key - value pairs 
-
+creation: {} or Hash.new
 ```
 shane = {
   :gender => 'male',
