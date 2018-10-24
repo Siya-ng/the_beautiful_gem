@@ -97,6 +97,12 @@ will generate the CRUD path for photos
 | PUT  | update specific photo | /photos/:id | update |
 | DELETE | delete a specific photo | /photos/:id |destroy |
 
+To check
+```
+rails routes
+``` 
+
+
 #### Paths
 * photos_path returns /photos
 * new_photo_path returns /photos/new
@@ -200,3 +206,58 @@ rake db:rollback
 rake db:rollback STEP=3
 ```
 
+## Versioning 
+### Rbenv 
+```
+$ brew install rbenv
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+$ source ~/.zshrc
+$ sudo chown -R $USER ~/.rbenv
+```
+#### Configuring rbenv
+
+```
+$ brew install ruby-build
+```
+To get the list of ruby versions available to install:
+```
+$ rbenv install --list
+```
+#### To install 
+```
+$ rbenv install 2.5.1
+<!-- rbenv install [version] -->
+```
+#### Set Local and Global
+
+```
+rbenv local 2.5.1
+<!-- rbenv local [version] -->
+rbenv global 2.5.1
+<!-- rbenv global [version] -->
+```
+able to use 
+```
+rbenv local 
+rbenv global
+``` 
+to check which version of ruby are using
+
+#### Install Rails
+
+```
+sudo gem update
+sudo gem install rails
+```
+
+#### Bundle install
+```
+gem install bundle
+bundle install
+```
+
+### Useful gem
+#### Devise 
+
+#### Active admin
