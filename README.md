@@ -447,25 +447,46 @@ returns the result of interpreting ary as an array of [key, value]
 [[:coffee_bean, 1], [:water, 2]].to_h
 #=> {:coffee_bean=>1, :water=>2}
 ```
-##### Ranges
+### Ranges
 ```ruby
 example_range = (1..10) # includes 10
 another_range = (1...10) # not including 10
 letters_range = ('a'..'z')
 ```
 
-#### Hashes
+### Hashes
 With key - value pairs 
 creation: {} or Hash.new
 ```ruby
 shane = {
   :gender => 'male',
-  :age => 26,
-  :fav_food => 'pepper'
+  "age" => 26,
+  :fav_food => 'pepper',
+
 }
 shane[:fav_food] 
-=> 'pepper'
+#=> 'pepper'
+shane["age"]
+#=> 26
+#=> to update or add new field
+shane[:house] = "red roof"
+
 ```
+### Misc
+to let the program to wait for a while
+* sleep
+```ruby
+sleep(4.minutes)
+sleep(2.hours)
+sleep 6 #=> sleep 6 seconds
+```
+* wait_until(timeout, message=nil) => Object
+```ruby
+@page.wait_until(5, 'Success not found on page') do
+  @page.text.include? 'Success'
+end
+```
+
 
 #### Symbols (TO DO: Read more)
 
